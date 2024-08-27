@@ -1,0 +1,14 @@
+<launch>
+
+<!--
+<include file="$(find fetch_navigation)/launch/fetch_nav.launch">
+    <arg name="map_file value=/home/fetch/catkin_ws/src/communication_planning/current_hallway.yaml "/>
+</include>
+-->
+
+
+  <node pkg="leg_detector" type="leg_detector" name="leg_detector"
+        args="scan:=base_scan $(find leg_detector)/config/trained_leg_detector.yaml" output="screen"/>
+
+  <node pkg="communication_planning" name="calib_map_and_live_locations" type="calib_map.py" output="screen" />
+</launch>

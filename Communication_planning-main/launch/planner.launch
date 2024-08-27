@@ -1,0 +1,8 @@
+<launch>
+	
+	<node pkg="communication_planning" name="planner" type="rrt_unicycle_cbf_static_obstacle.py" output="screen" />
+	<node pkg="communication_planning" name="plan_publisher" type="path_publisher.py" output="screen" />
+
+</launch>
+
+
